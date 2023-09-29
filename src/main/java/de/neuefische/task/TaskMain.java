@@ -17,5 +17,13 @@ public class TaskMain {
         school.addStudent(max);
         System.out.println(school);
         System.out.println(school.getStudentByMatriculationNumber("4"));
+
+        Course math = new Course("Math", "Teacher", "1");
+        Course ds = new Course("Data Science", "Teacher", "1");
+
+        max.addCourse(math);
+        max.addCourse(ds);
+
+        System.out.println(school.getCoursesFromStudent(max.getMatriculationNumber()));
     }
 }
