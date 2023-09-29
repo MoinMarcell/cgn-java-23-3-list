@@ -23,6 +23,10 @@ public class School {
         return null;
     }
 
+    public List<Course> getCoursesFromStudent(String matriculationNumber){
+        return getStudentByMatriculationNumber(matriculationNumber).getCourses();
+    }
+
     public void deleteStudentByMatriculationNumber(String matriculationNumber){
         /*for(Student student : students){
             if(student.getMatriculationNumber().equals(matriculationNumber)){
