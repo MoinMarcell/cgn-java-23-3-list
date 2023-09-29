@@ -1,21 +1,23 @@
 package de.neuefische.task;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class School {
-    private List<Student> students;
+    private Map<String, Student> students;
 
     public School() {
-        students = new ArrayList<>();
+        students = new HashMap<>();
     }
 
     public void addStudent(Student student){
-        students.add(student);
+        students.put(student.getMatriculationNumber(), student);
     }
 
     public Student getStudentByMatriculationNumber(String matriculationNumber){
-        for(Student student : students){
+        for(Student student : students.values()){
             if(student.getMatriculationNumber().equals(matriculationNumber)){
                 return student;
             }
@@ -31,7 +33,7 @@ public class School {
         }*/
         Student studentToDelete = getStudentByMatriculationNumber(matriculationNumber);
         if(studentToDelete != null){
-            students.remove(studentToDelete);
+            students.remove(studentToDelete.getMatriculationNumber());
         }
     }
 
